@@ -1,0 +1,38 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "renpy/common/00gamemenu.rpy", line 173, in script
+    $ renpy.show_screen(_game_menu_screen, *args, _transient=True, **kwargs)
+  File "renpy/common/00gamemenu.rpy", line 173, in <module>
+    $ renpy.show_screen(_game_menu_screen, *args, _transient=True, **kwargs)
+  File "game/screens.rpy", line 726, in <module>
+    modal rue
+NameError: name 'rue' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/00gamemenu.rpy", line 173, in script
+    $ renpy.show_screen(_game_menu_screen, *args, _transient=True, **kwargs)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 173, in <module>
+    $ renpy.show_screen(_game_menu_screen, *args, _transient=True, **kwargs)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/screen.py", line 1236, in show_screen
+    d = ScreenDisplayable(screen, _tag, _layer, _widget_properties, scope, transient=_transient)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/screen.py", line 455, in __init__
+    self.modal = renpy.python.py_eval(self.screen.modal, locals=self.scope)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1153, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/screens.rpy", line 726, in <module>
+    modal rue
+NameError: name 'rue' is not defined
+
+Darwin-24.5.0-arm64-arm-64bit arm64
+Ren'Py 7.6.3.23091805
+hypsm 1.0
+Sat Jan 24 12:05:34 2026
