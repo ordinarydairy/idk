@@ -1,38 +1,149 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00gamemenu.rpy", line 173, in script
-    $ renpy.show_screen(_game_menu_screen, *args, _transient=True, **kwargs)
-  File "renpy/common/00gamemenu.rpy", line 173, in <module>
-    $ renpy.show_screen(_game_menu_screen, *args, _transient=True, **kwargs)
-  File "game/screens.rpy", line 726, in <module>
-    modal rue
-NameError: name 'rue' is not defined
+  File "game/script.rpy", line 569, in script call
+    call GC1
+  File "game/phone/definitions/01definitions.rpy", line 60, in script
+    phone discussion "GC":
+  File "game/01statements.rpy", line 32, in execute
+    rv.execute()
+  File "game/01statements.rpy", line 412, in execute
+    statement.execute()
+  File "game/01statements.rpy", line 110, in execute
+    eval(self.delay, globals)
+  File "game/phone/apps/discussion/discussion.rpy", line 131, in message
+    dc.send(delay)
+  File "game/phone/apps/discussion/discussion.rpy", line 115, in _discussion_coroutine
+    pause(delay)
+  File "game/phone_stuff.rpy", line 69, in pause
+    ui.interact(mouse='pause', type="pause", roll_forward=None)
+  File "game/phone/overlay/status_bar.rpy", line 60, in internet_connection_displayable
+    return internet_connection_displayables[system.get_internet_connection_state()], 0.1
+  File "game/phone/system.rpy", line 29, in get_internet_connection_state
+    _wifi = gethostbyname(gethostname()) != "127.0.0.1"
+gaierror: [Errno 8] nodename nor servname provided, or not known
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 173, in script
-    $ renpy.show_screen(_game_menu_screen, *args, _transient=True, **kwargs)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 173, in <module>
-    $ renpy.show_screen(_game_menu_screen, *args, _transient=True, **kwargs)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/screen.py", line 1236, in show_screen
-    d = ScreenDisplayable(screen, _tag, _layer, _widget_properties, scope, transient=_transient)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/screen.py", line 455, in __init__
-    self.modal = renpy.python.py_eval(self.screen.modal, locals=self.scope)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1153, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1146, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/screens.rpy", line 726, in <module>
-    modal rue
-NameError: name 'rue' is not defined
+  File "game/script.rpy", line 569, in script call
+    call GC1
+  File "game/phone/definitions/01definitions.rpy", line 60, in script
+    phone discussion "GC":
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/ast.py", line 2259, in execute
+    self.call("execute")
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/ast.py", line 2241, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/statements.py", line 342, in call
+    return method(parsed, *args, **kwargs)
+  File "game/01statements.rpy", line 32, in execute
+    rv.execute()
+  File "game/01statements.rpy", line 412, in execute
+    statement.execute()
+  File "game/01statements.rpy", line 110, in execute
+    eval(self.delay, globals)
+  File "game/phone/apps/discussion/discussion.rpy", line 131, in message
+    dc.send(delay)
+  File "game/phone/apps/discussion/discussion.rpy", line 115, in _discussion_coroutine
+    pause(delay)
+  File "game/phone_stuff.rpy", line 69, in pause
+    ui.interact(mouse='pause', type="pause", roll_forward=None)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/core.py", line 3582, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/core.py", line 4175, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/core.py", line 2785, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/screen.py", line 731, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/transform.py", line 909, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 1341, in render
+    st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/transform.py", line 909, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/sl2/sldisplayables.py", line 87, in render
+    cr = renpy.display.render.render(self.child, width, height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/transform.py", line 909, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/behavior.py", line 948, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 1341, in render
+    st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 888, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 1064, in render
+    surf = render(d, rw, height - y, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/transform.py", line 909, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/transform.py", line 909, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 979, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 404, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 1537, in render
+    self.update(st, at)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/display/layout.py", line 1509, in update
+    raw_child, redraw = self.function(st, at, *self.args, **self.kwargs)
+  File "game/phone/overlay/status_bar.rpy", line 60, in internet_connection_displayable
+    return internet_connection_displayables[system.get_internet_connection_state()], 0.1
+  File "game/phone/system.rpy", line 29, in get_internet_connection_state
+    _wifi = gethostbyname(gethostname()) != "127.0.0.1"
+gaierror: [Errno 8] nodename nor servname provided, or not known
 
 Darwin-24.5.0-arm64-arm-64bit arm64
 Ren'Py 7.6.3.23091805
 hypsm 1.0
-Sat Jan 24 12:05:34 2026
+Sat Jan 31 12:28:47 2026
