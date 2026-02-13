@@ -1,0 +1,175 @@
+screen freeTime:
+    add "map.jpg"
+
+    imagebutton:
+        xpos 50
+        ypos 300
+        idle "building1.png"
+        hover "building2.png"
+        action Jump("library")
+
+    imagebutton:
+        xpos 300
+        ypos 300
+        idle "building1.png"
+        hover "building2.png"
+        action Jump("cafe")
+
+    imagebutton:
+        xpos 600
+        ypos 300
+        idle "building1.png"
+        hover "building2.png"
+        action Jump("park")
+
+    imagebutton:
+        xpos 1100
+        ypos 300
+        idle "building1.png"
+        hover "building2.png"
+        action Jump("bookstore")
+
+    imagebutton:
+        xpos 1500
+        ypos 300
+        idle "building1.png"
+        hover "building2.png"
+        action Jump("convenience")
+
+#library - no bonuses, sat word game (concentration)
+label library:
+    $ freetimelocation = "library"
+    if day == 2:
+        e neutral "Let's study in the library."
+        scene bg library
+        e "The library's pretty quiet right now..."
+        e "We can study for a bit first so we don't disturb anyone."
+        $ libraryday = "library2"
+        $randomize_cards()
+        call screen memory_game
+        label library2:
+            show eva
+            v "Flashcards are really helpful for studying, aren't they?"
+            v "I like how they make it easy to quiz yourself on the material."
+            v "Do you use them often?"
+            e nervous "Sometimes..."
+            e "(I usually just make them when I'm cramming for a test...)"
+            
+            jump evaFT_1
+        
+        label evaFT_1done_library:
+            scene bg library_sunset
+            $eva_stats.likes = "Volunteering"
+            $eva_stats.relationship += 1
+            show screen gameUI
+        jump TuesdayEve
+    elif day == 3:
+        e "Let's study in the library."
+        m "...Interesting choice, but I guess it's your call."
+        scene bg library
+        $ libraryday = "library3"
+        $randomize_cards()
+        call screen memory_game
+        label library3:
+            e "..."
+            jump masonFT_1
+
+        jump WednesdayLunch
+#cafe - ruby bonus, jigsaw puzzle
+label cafe:
+    $ freetimelocation = "cafe"
+    if day == 2:
+        e "Let's go to the cafe."
+        scene bg cafe
+        e "The cafe always has jigsaw puzzles laying around..."
+        v "Let's work on one together!"
+        #call jigsaw puzzle game once i figure that out
+        $ cafeday = "cafe2"
+        $setup_puzzle()
+        call screen puzzle
+        label cafe2:
+            show eva
+            v "Yay, we did it!"
+            jump evaFT_1
+        
+
+        label evaFT_1done_cafe:
+            scene bg cafe_sunset
+            $eva_stats.likes = "Volunteering"
+            $eva_stats.relationship += 1
+            show screen gameUI
+        jump TuesdayEve            
+
+#park - eva bonus
+label park:
+    "[[this free time location is coming soon!]"
+    jump library
+
+#bookstore - mason bonus, cards (blackjack?) for some reason / depends on the person
+label bookstore:
+    if day == 3:
+        e "How about the bookstore?"
+        m "That sounds good!"
+    else:
+        jump library
+#convenience store - xavier bonus, 
+label convenience:
+    "[[this free time location is coming soon!]"
+    jump library
+
+label evaFT_1:
+    v "I guess I never really asked you about this, but what do you think about this Ivy Gate project?"
+    v "I mean, my classes aren't really hardcore, so it's kind of hard for me to wrap my head around how this single project could change all of our lives, you know?"
+    e nervous "(Life-changing, huh...)"
+    e "(That's kind of an exaggeration, but this project is pretty important...)"
+    e "I guess I'm just not sure how to feel about it yet."
+    v "We should just do the best we can, and work together, right?"
+    e neutral "Right. We all have strengths in different areas, I'm sure."
+    v "It's a team effort. Imagine if we had to compete against each other! That'd be silly."
+    e sigh "(Sounds like a nightmare...)"
+    "The air between us falls silent."
+    menu: 
+        e neutral "I should use this time to get to know Eva better..."
+        "Ask about hobbies":
+            e "So, what do you like to do for fun?"
+            v "Hmm..."
+            v "Well, it's a three-way tie."
+            v "Between running TutorToday, working at the community garden, and playing piano, I'd say they're all my favorite."
+            v "I guess I won't have much time to work on anything else now that we've got Ivy Gate, though..."
+
+
+        "Ask about school":
+            e "What classes are you taking this year?"
+            v "English, math, government..."
+            v "Nothing crazy, I guess."
+            v "I wanna take it easy for now because it's senior year, you know?"
+            v "I also wanted to spend more time volunteering this year."
+
+    e "How long have you been volunteering?"
+    v "Since eighth grade..."
+    v "I know a lot of people start doing it because they think it'll look good on college applications, but that's not the case with me at all...!!"
+    v "It kind of just started with me playing piano around town, and it's branched off into all kinds of things since."
+    e "How long have you been playing piano?"
+    v "I started in third grade, but it's been on and off."
+    v "Lately I haven't been feeling the same passion for it that I used to..."
+    v "It's kind of scary when that happens, you know?"
+    v "Or maybe that's just me, haha..."
+
+    jump expression "evaFT_1done_" + freetimelocation
+
+label masonFT_1:
+    m "Sooo...."
+    m "How are college apps going?"
+    e nervous "(Talking about college right away, huh...)"
+    e "They're going okay?"
+    m "That's nice."
+    m "How many schools are you applying to? {p}19? 20?"
+    e nervous "Uhh....no?"
+    e sigh "(That's so many...wouldn't that cost a fortune?)"
+    m "Well, to each their own, I suppose."
+    m "Personally, I want to keep it safe, you know?"
+    m "With everything I've done, I REALLY don't want to be stuck with some low-tier school."
+    m "I guess I won't need to worry about that now that we've got this Ivy Gate thing, though..."
+
+    
+    jump WednesdayLunch

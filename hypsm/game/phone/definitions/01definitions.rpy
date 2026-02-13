@@ -7,14 +7,22 @@ default pc_monika  = phone.character.Character("Monika", phone.asset("monika_ico
 default pc_natsuki = phone.character.Character("Natsuki", phone.asset("natsuki_icon.png"), "n", 45, "#fbb")
 
 default pc_eden = phone.character.Character("[name]", phone.asset("side eden.png"), "e", 10, "#80c39a")
-default pc_eva = phone.character.Character("Eva", phone.asset("eva pfp.png"), "v", 11, "#36d7ff")
+default pc_eva = phone.character.Character("Eva", phone.asset("eva pfp.png"), "v", 11, "#ffaed3")
 default pc_ruby = phone.character.Character("Ruby", phone.asset("ruby pfp.png"), "r", 12, "#B2493F")
-default pc_mason = phone.character.Character("Mason", phone.asset("mason pfp.png"), "m", 13, "#BE9DE8")
+default pc_mason = phone.character.Character("Mason", phone.asset("mason pfp.png"), "m", 13, "#5185ce")
 default pc_xavier = phone.character.Character("Xavier", phone.asset("xavier pfp.png"), "x", 14, "#363636")
 
 
 define phone_s  = Character("Sayori", screen="phone_say", who_style="phone_say_label", what_style="phone_say_dialogue")
 define phone_mc = Character("MC", screen="phone_say", who_style="phone_say_label", what_style="phone_say_dialogue")
+
+define phone_eden = Character("[name]", screen="phone_say", who_style="phone_say_label", what_style="phone_say_dialogue")
+define phone_eva = Character("Eva", screen= "phone_say", who_style="phone_say_label", what_style="phone_say_dialogue")
+define phone_ruby = Character("Ruby", screen="phone_say", who_style="phone_say_label", what_style="phone_say_dialogue")
+define phone_mason = Character("Mason", screen="phone_say", who_style="phone_say_label", what_style="phone_say_dialogue")
+define phone_xavier = Character("Xavier", screen="phone_say", who_style="phone_say_label", what_style="phone_say_dialogue")
+
+
 
 default pov_key = "e"
 
@@ -33,6 +41,14 @@ init phone register:
     define "Eva":
         add "v" add "e"
         icon "eva pfp.png" key "EvaChat"
+init phone register:
+    define "Mason":
+        add "m" add "e"
+        icon "mason pfp.png" key "Mason"
+init phone register:
+    define "Ruby":
+        add "r" add "e"
+        icon "ruby" key "Ruby"
 
 default group_chat = phone.group_chat.GroupChat("GC", phone.asset("default_icon.png"), "GC").add_character("x").add_character("r").add_character("v").add_character("m").add_character("e")
 
@@ -62,14 +78,17 @@ label GC1:
         label "'Ruby' added 'Mason' to the group" delay -1
         label "'Ruby' added 'Xavier' to the group" delay -1
         label "'Ruby' added '[name]' to the group" delay -1
-        "e" "hi"
-        "r" "hi"
-        "v" "hi"
-        "m" "hi"
-        "x" "hi"
+        "r" "This is our new group chat."
+        "v" "hi guys! {emoji=heart}"
+        "m" "Hi"
+        "x" "hey"
+        "e" "hello"
+        "r" "Considering we only have until Saturday to work on this presentation, we should dedicate some time outside of meetings to it as well."
+        
 
     phone end discussion    
     return
+
 
 
 

@@ -1,0 +1,38 @@
+# hypsm — Ren'Py project
+
+Small Ren'Py visual-novel project containing a phone UI and several minigames.
+
+## Requirements
+- Ren'Py (recommended latest stable release)
+- Python (bundled with Ren'Py; no separate install required)
+
+## Quick start
+1. Place this repository in your Ren'Py projects folder (e.g., `RenPy-*/projects/`).
+2. Launch the Ren'Py launcher and open the project named `hypsm`.
+3. Click "Launch Project".
+
+## Project layout (important files)
+- `script.rpy`, `screens.rpy`, `gui.rpy` — main story, UI screens and GUI.
+- `phone/` — phone app logic and subapps (`apps/`, `characters.rpy`, etc.).
+- `minigames.rpy` — minigames and matching/puzzle logic.
+- `images/` — art assets (cards, pieces, etc.).
+- `saves/` — example save files and `persistent`.
+- `tl/` — translations/localization files.
+- `cache/`, `gui/`, `overlay/` — runtime/GUI assets and caches.
+
+Compiled bytecode (`*.rpyc`, `.rpyb`) and backup files may be present; source `.rpy` files are the ones to edit.
+
+## Development notes
+- Edit `.rpy` files with Ren'Py or a plain text editor. Use the Ren'Py launcher to test changes.
+- Keep translations in `tl/`.
+- Remove `.rpyc` and cache if you encounter stale bytecode after edits.
+
+## Contributing
+- Create issues/PRs for bug fixes or improvements.
+- Keep commits focused and include brief descriptions of UI/story/asset changes.
+
+## License
+Add a license file (`LICENSE`) appropriate for your project. If unsure, consider MIT or another permissive license.
+
+---
+For questions about running or modifying specific scripts, open the relevant `.rpy` file and reference Ren'Py docs: https://www.renpy.org/doc/latest/

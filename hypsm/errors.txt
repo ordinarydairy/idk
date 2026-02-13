@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/phone/definitions/01definitions.rpy", line 37: init phone register statement expects a non-empty block.
-    init phone register:   
-                       ^
+File "game/minigames.rpy", line 236: expected 'label_name' not found.
+    jump 
+        ^
 
 Ren'Py Version: Ren'Py 7.6.3.23091805
-Fri Jan 30 23:34:07 2026
+Fri Feb 13 11:18:53 2026
