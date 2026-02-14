@@ -933,7 +933,7 @@ label start:
         m "It was nice talking to you, though!"
 
         hide mason
-        $mason_stats.likes = ""
+        $mason_stats.likes = "Browsing LinkedIn"
         $mason_stats.relationship += 1
         "[[You have learned something new about Mason.]"
         "[[Your relationship with Mason increased by 1.]"        
@@ -1126,6 +1126,11 @@ label start:
     hide xavier
     e "(What an interesting guy...)"
 
+    $xavier_stats.likes = "Practice problems"
+    $xavier_stats.relationship += 1
+    "[[You have learned something new about Xavier.]"
+    "[[Your relationship with Xavier increased by 1.]"    
+
     scene bg room_night
     "I bought the dish soap and went home."
     "I realized how tired I was, and fell asleep straight after completing my homework."
@@ -1177,7 +1182,47 @@ label start:
     e "So, what did you want to talk to me about?"
     r "Well..."
     r "I just wanted to check in."
+    r "Remember that in addition to our presentation on Sunday, we also need to submit reports documenting our research and design process."
+    r "How's that going for you?"
+    e nervous "(Back into work mode, huh...)"
+    e neutral "We're pretty much done..."
+    e "All of the information is there, we just need to add some finishing touches."
+    r "Pretty much done, huh."
+    r "Well, I'd appreciate it if you two finished the report before today's meeting so we can focus on the presentation from now on."
+    r "..."
+    e nervous "...Is that all?"
+    r "That's all."
+    "She took a sip of her coffee."
+    e "(There's still some time left before class starts.)"
+    menu: 
+        e neutral "I should use this time to get to know Ruby better..."
+        "Ask about hobbies":
+            e "So, what do you like to do for fun?"
+            r "Hm..."
+            r "Lately, I've been preparing for cheer season tryouts."
+            r "I've also been in talks with the school board to add more preventative measures against cheating."
+            e nervous "That doesn't really sound fun..."
+            r "To me, being productive is fun."
+            r "Something some of you people should learn a thing or two about..."
+
+        "Ask about school":
+            e "So, what classes are you taking this year?"
+            r "I think it's important to be well-rounded."
+            r "In addition to the student government class, I'm taking choir, yearbook, AP Chemistry, and AP Literature."
+            r "I'm also starting German."
+            r "Of course, I take plenty of overnight classes at the community college as well."
+            e "(Compared to Xavier, I guess this is a pretty normal schedule...)"
+            r "Though academic rigor is important, the skills you learn from taking a variety of classes is more important."
+            r "Being well-rounded will also help me connect with the student body as their president."
+
+    "The bell rings, signaling the start of class."
+    e "We should go..."
     r "See you at the meeting this afternoon."
+
+    $ruby_stats.likes = "Justice"
+    $ruby_stats.relationship += 1
+    "[[You have learned something new about Ruby.]"
+    "[[Your relationship with Ruby increased by 1.]"    
 
 
 
@@ -1186,18 +1231,38 @@ label start:
     "I was the last person to arrive that day."
     show ruby
     r "Since we're all here, let's get started."
-    r "To summarize..."
-
+    r "I've finished the design write-up that we'll send to the initiative council."
+    r "I expect that Eva and [name] have finished the research report as well?"
+    hide ruby
     show eva
-    v "Maybe we could meet at someone's house tomorrow to prepare more?"
+    v "Yep!"
+    e "Yeah."
     hide eva
     show ruby
-    r "That's a good idea."
-    m "In that case, I'd be happy to volunteer."
-    m "My house is pretty big, and I'm sure my parents don't mind."
+
+    scene bg room
+    $ phone.system.date = datetime.datetime(year=2025, day=19, month=8, hour=5, minute=51)
+    phone discussion "GC":
+        time year 2025 day 19 month 8 hour 5 minute 51
+        "v" "maybe we could meet at someone's house tomorrow to prepare more?"
+        "r" "That's a good idea."
+        "m" "In that case Id be happy to volunteer"
+        "m" "My house is pretty big and my parents probably dont mind"
+    phone end discussion
+
 
 #saturday
+    scene bg street
+    "On Saturday morning, I got dropped off at Mason's house."
+    e nervous "This place is huge..."
+    show mason
+    m "Hey, [name]!"
+    m "Come on in."
     scene bg masonhouse
+    m "My parents are out of town, by the way."
+    m "Feel free to help yourself to anything we have here."
+    e "(I never thought that Mason's house would look like this...)"
+    "Soon enough, everyone had arrived."
     "get ready."
     $debateindex = "debate1"
     $speed=0.8
@@ -1213,8 +1278,6 @@ label start:
     r "I think that's enough practice for now."
 
 
-#group lock in or osmething
-#they become closer
 
 #sunday
 #they drive to the event
@@ -1249,7 +1312,7 @@ label start:
     Character("Blonde Riverside Girl") "?"
     e nervous "Um, hi..."
     e sigh "(Riverside Academy...where do I even begin?)"
-    "We may be one of the best public high schools in the county..."
+    "We may be one of the best {i}public{/i} high schools in the county..."
     "But Riverside Academy is the best school in the county, period."
     e "(Making them our number one academic rival...)"
     e nervous "(I've heard all kinds of things about students from Riverside...)"
@@ -1294,7 +1357,7 @@ label start:
     r "Let's focus on the task at hand."
     "She handed everyone their nametags."
     e nervous "(I forgot how scary she can be sometimes...)"
-    r "The registration said that we would present in around half an hour."
+    r "The registration said that we're presenting in around half an hour."
     hide ruby
     show mason
     m "While we wait, do you want to practice some more?"
@@ -1370,6 +1433,7 @@ label start:
     x "I'm relieved it's over..."
     x "I'm not a fan of public speaking."
     e sigh "Same..."
+    hide xavier
     show eva
     v "Where's Ruby?"
     hide eva
@@ -1438,7 +1502,7 @@ label start:
     Character("Principal") "Because of resource scarcity, they are only able to reward a limited amount of scholarships and admission offers."
     Character("Principal") "Which means..."
     Character("Principal") "{b}Only a single person on each winning team will be offered a scholarship and admission to a top 10 university.{/b}"
-    Character("Principal") "The award recipients for each team will be determined by a combination of task performance and other factors not currently disclosed to participants."
+    Character("Principal") "The reward recipients for each team will be determined by a combination of task performance and other factors not currently disclosed to participants."
     Character("Principal") "The Council does not plan to make any further changes to tasks or initative rules at this time."
     Character("Everyone") "..."
     "There was a moment of silence."
@@ -1463,7 +1527,7 @@ label start:
     "Southcrest High School Score Breakdown"
     "Hartford, Ruby. {p}Research: 50, Presentation: 50."
     "[name]. {p}Research: 49, Presentation: 49."
-    "Espinoza, Mason. {p}Research: 48, Presentation: 50."
+    "Espinosa, Mason. {p}Research: 48, Presentation: 50."
     "Schafer, Eva. {p}Research: 47, Presentation: 49."
     "Lim, Xavier. {p}Research: 48, Presentation: 46."
     "Composite Score: 486"
@@ -1476,19 +1540,16 @@ label start:
     e "(From now on, only one of us can win...)"
     "Somehow, I knew that we would never look at each other in the same way ever again."
 
+    scene black
     "[[End Chapter 0]"
 
     return
 
 
-
-
-
-
 #to-dos:
 
 #graphics (me) - refine character sprites + poses/expressions
-#                map
+#                map!!!!!!!!!!
 
 #eden
     # happy 
@@ -1520,18 +1581,12 @@ label start:
 #assets (find) - sounds (mostly footsteps, classroom chatter, bell)
 # 
 
-#monday - finish intro monologue, <--- done! (kinda)
+#monday -
 #         add some banter in office scene, <---not doing this anymore?
 #         write texting dialogue
-#         work on contract signing/task graphic, 
+#         work on task graphic
 
-#tuesday - DONE
-
-#wednesday - write mason freetime
-
-#thursday - write meeting thing
-
-#friday - everything
+#friday - friday meeting
 
 #saturday - everything
 
