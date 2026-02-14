@@ -1,229 +1,24 @@
-Fri Feb 13 11:35:07 2026
+Fri Feb 13 21:48:53 2026
 Darwin-24.5.0-arm64-arm-64bit
 Ren'Py 7.6.3.23091805
  
 
 Bootstrap to the start of init.init. took 0.06s
 Early init. took 0.00s
-Loader init. took 0.01s
+Loader init. took 0.02s
 Loading error handling. took 0.03s
-Loading script. took 0.46s
-Loading save slot metadata. took 0.07s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.06s
 Loading persistent. took 0.00s
 Running init code. took 0.05s
-Loading analysis data. took 0.04s
+Loading analysis data. took 0.03s
 Analyze and compile ATL. took 0.00s
-Reloading save slot metadata. took 0.08s
+Reloading save slot metadata. took 0.09s
 Index archives took 0.00s
-Backing up script files to '/Users/claire/Library/RenPy/backups/hypsm':
-Dump and make backups. took 0.15s
-Cleaning cache. took 0.00s
-Making clean stores. took 0.00s
-Initial gc. took 0.03s
-DPI scale factor: 1.000000
-Creating interface object. took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.05s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.05s
-Prepare screens took 0.13s
-Save pyanalysis. took 0.05s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Performance test:
-Interface start. took 5.08s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'Apple'
-Renderer: 'Apple M1'
-Version: '2.1 Metal - 89.4'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(2676, 1506)
-Maximum texture size: 4096x4096
-Cleaning stores took 0.02s
-Init translation took 0.01s
-Build styles took 0.02s
-Load screen analysis took 0.08s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.01s
-
-Full traceback:
-  File "renpy/common/00keymap.rpy", line 485, in script
-    python hide:
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00keymap.rpy", line 485, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 509, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/loadsave.py", line 432, in save
-    reraise(t, e, tb)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/loadsave.py", line 413, in save
-    dump((roots, renpy.game.log), logf)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/compat/pickle.py", line 51, in dump
-    cPickle.dump(o, f, PROTOCOL)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1219, in module_pickle
-    raise Exception("Could not pickle {!r}.".format(module))
-Exception: Could not pickle <module 'time' (built-in)>. (perhaps store.time = <module 'time' (built-in)>)
-
-While running game code:
-  File "renpy/common/00keymap.rpy", line 485, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 485, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 509, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-Exception: Could not pickle <module 'time' (built-in)>. (perhaps store.time = <module 'time' (built-in)>)
-Can't find a place to rollback to. Not rolling back.
-Can't find a place to rollback to. Not rolling back.
-Can't find a place to rollback to. Not rolling back.
-
-Full traceback:
-  File "renpy/common/00keymap.rpy", line 485, in script
-    python hide:
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00keymap.rpy", line 485, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 509, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/loadsave.py", line 432, in save
-    reraise(t, e, tb)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/loadsave.py", line 413, in save
-    dump((roots, renpy.game.log), logf)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/compat/pickle.py", line 51, in dump
-    cPickle.dump(o, f, PROTOCOL)
-  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1219, in module_pickle
-    raise Exception("Could not pickle {!r}.".format(module))
-Exception: Could not pickle <module 'time' (built-in)>. (perhaps store.time = <module 'time' (built-in)>)
-
-While running game code:
-  File "renpy/common/00keymap.rpy", line 485, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 485, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 509, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-Exception: Could not pickle <module 'time' (built-in)>. (perhaps store.time = <module 'time' (built-in)>)
-Cleaning stores took 0.00s
-Init translation took 0.03s
-Build styles took 0.03s
-Load screen analysis took 0.11s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Resetting cache.
-Bootstrap to the start of init.init. took 8149.90s
-Early init. took 0.00s
-Loader init. took 0.01s
-Loading error handling. took 0.03s
-Loading script. took 0.36s
-Loading save slot metadata. took 0.04s
-Loading persistent. took 0.00s
-Running init code. took 0.03s
-Loading analysis data. took 0.04s
-Analyze and compile ATL. took 0.00s
-Reloading save slot metadata. took 0.08s
-Index archives took 0.00s
-Backing up script files to '/Users/claire/Library/RenPy/backups/hypsm':
 Dump and make backups. took 0.11s
 Cleaning cache. took 0.00s
 Making clean stores. took 0.00s
-Initial gc. took 0.05s
-DPI scale factor: 1.000000
-Creating interface object. took 0.01s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.05s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Performance test:
-Interface start. took 0.25s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'Apple'
-Renderer: 'Apple M1'
-Version: '2.1 Metal - 89.4'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(2676, 1506)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init. took 8177.05s
-Early init. took 0.00s
-Loader init. took 0.01s
-Loading error handling. took 0.02s
-Loading script. took 0.14s
-Loading save slot metadata. took 0.03s
-Loading persistent. took 0.00s
-Running init code. took 0.03s
-Loading analysis data. took 0.03s
-Analyze and compile ATL. took 0.00s
-Reloading save slot metadata. took 0.03s
-Index archives took 0.00s
-Dump and make backups. took 0.12s
-Cleaning cache. took 0.00s
-Making clean stores. took 0.00s
-Initial gc. took 0.05s
-DPI scale factor: 1.000000
-Creating interface object. took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.01s
-Load screen analysis took 0.04s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.13s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Performance test:
-Interface start. took 0.18s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'Apple'
-Renderer: 'Apple M1'
-Version: '2.1 Metal - 89.4'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(2676, 1506)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init. took 8237.11s
-Early init. took 0.00s
-Loader init. took 0.02s
-Loading error handling. took 0.02s
-Loading script. took 0.14s
-Loading save slot metadata. took 0.04s
-Loading persistent. took 0.00s
-Running init code. took 0.03s
-Loading analysis data. took 0.03s
-Analyze and compile ATL. took 0.00s
-Reloading save slot metadata. took 0.08s
-Index archives took 0.00s
-Dump and make backups. took 0.12s
-Cleaning cache. took 0.00s
-Making clean stores. took 0.00s
-Initial gc. took 0.04s
+Initial gc. took 0.02s
 DPI scale factor: 1.000000
 Creating interface object. took 0.00s
 Cleaning stores took 0.00s
@@ -237,7 +32,7 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start. took 0.19s
+Interface start. took 1.25s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1440, 900)
@@ -249,3 +44,58 @@ Version: '2.1 Metal - 89.4'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(2676, 1506)
 Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 1354, in script
+    $speaking.score = points
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 1354, in <module>
+    $speaking.score = points
+NameError: name 'speaking' is not defined
+
+While running game code:
+  File "game/script.rpy", line 1354, in script
+    $speaking.score = points
+  File "game/script.rpy", line 1354, in <module>
+    $speaking.score = points
+NameError: name 'speaking' is not defined
+
+Full traceback:
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 485, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 509, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/loadsave.py", line 432, in save
+    reraise(t, e, tb)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/loadsave.py", line 413, in save
+    dump((roots, renpy.game.log), logf)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/compat/pickle.py", line 51, in dump
+    cPickle.dump(o, f, PROTOCOL)
+  File "/Users/claire/Downloads/renpy-8.0.1-sdk/renpy/python.py", line 1219, in module_pickle
+    raise Exception("Could not pickle {!r}.".format(module))
+Exception: Could not pickle <module 'time' (built-in)>. (perhaps store.time = <module 'time' (built-in)>)
+
+While running game code:
+  File "renpy/common/00keymap.rpy", line 485, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 485, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 509, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+Exception: Could not pickle <module 'time' (built-in)>. (perhaps store.time = <module 'time' (built-in)>)
+Cleaning stores took 0.01s
+Init translation took 0.01s
+Build styles took 0.03s
+Load screen analysis took 0.08s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.01s

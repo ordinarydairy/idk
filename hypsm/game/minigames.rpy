@@ -223,17 +223,46 @@ screen qte_simple:
 label debate:
     $ import time
     $ score = 0
-    $ arr_keys = ["e","t","y","u","i","g","h","j","k","x","c","b","n","m"]
+    $ arr_keys = ["e","t","y","u","i","x","c","b","n","m"]
     $ start_time = time.time()
 
     while time.time() - start_time < 30.0:
-        call qte_setup(0.8, 0.8, 0.01, renpy.random.choice(arr_keys), renpy.random.randint(1, 9) * 0.1, renpy.random.randint(1, 9) * 0.1)
+        call qte_setup(speed,speed, 0.01, renpy.random.choice(arr_keys), renpy.random.randint(1, 9) * 0.1, renpy.random.randint(1, 9) * 0.1)
         if cont == 1:
             $ score += 1
         else:
             $ score -= 1
 
-    "Time's up. Final score: [score]"
+    "[[Time's up. Final score: [score]]"
     jump expression "" + debateindex
 
+label specialdebate:
+    "[[In this version of the speech minigame, you will need to {b}complete 20 hits as quickly as possible.{/b}]"
+    "[[You won't be deducted points for misses.]"
+    "[[Good luck.]"
+    $ import time
+    $ score = 0                # tracks number of hits
+    $ target = 20
+    $ points = 0               # will be calculated from total time
+    $ arr_keys = ["e","t","y","u","i","x","c","b","n","m"]
+    $ overall_start = time.time()
+
+    while score < target:
+        $ key = renpy.random.choice(arr_keys)
+        $ start_time = time.time()
+        call qte_setup(speed, speed, 0.01, key, renpy.random.randint(1, 9) * 0.1, renpy.random.randint(1, 9) * 0.1)
+        $ elapsed = time.time() - start_time
+
+        if cont == 1:
+            # count one hit toward the target
+            $ score += 1
+
+    $ total_time = time.time() - overall_start
+    # faster completion yields more points; scale factor (100) can be adjusted
+    $ points = int((target / max(0.0001, total_time)) * 100)
+    if points >= 100:
+        $points = 100
+            
+    "[[Complete. Time: [total_time:.2f]s.]"
+    jump expression "" + debateindex
 

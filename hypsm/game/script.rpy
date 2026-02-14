@@ -1023,6 +1023,17 @@ label start:
     hide eva
     show ruby
     r "Well said."
+    r "Mason, would you like to share our plans for the pitch?"
+    hide ruby 
+    show mason
+    m "Okay."
+    m "To start, we want to work with the city to create a free or reduced travel pass for all students."
+    m "We would also try and improve service frequency through the city, though we think it's not really achieveable."
+    m "The heart of our pitch is going to be a specialized app designed to help teens travel conveniently and safely."
+    m "Some of its features include a trip planning function and social features."
+    hide mason
+    r "Now that we're on the same page..."
+
 
 
     scene bg meetingroom_sunset
@@ -1188,7 +1199,8 @@ label start:
 #saturday
     scene bg masonhouse
     "get ready."
-    $debateindex = debate1
+    $debateindex = "debate1"
+    $speed=0.8
     jump debate
     label debate1:
         if score <= 20:
@@ -1198,7 +1210,7 @@ label start:
             r "Well done."
             v "That was great, [name]!"
             r "Just remember that the actual presentation will be a lot more difficult than this."
-    r "Okay, I think that's enough for now."
+    r "I think that's enough practice for now."
 
 
 #group lock in or osmething
@@ -1206,12 +1218,272 @@ label start:
 
 #sunday
 #they drive to the event
-    scene bg auditorium
+    "The next morning, we each drove to the presentation venue."
+    e nervous "(Thankfully, it wasn't that long of a drive...)"
 # they meet the opps who seem like theyll be important but actually arent rlly that important
-# they present their thing
-# they celebrate
-# the principal reveals that theres been a change of plans and theyve actually been competing against each other this whole time
-# end chapter 0 oooooOOOOOOOooo
+    scene bg auditorium
+    #chatter
+    show ruby at left
+    show eva at middleleft    
+    show mason at short.middleright
+    show xavier at right
+    v "Good morning, everyone!!!"
+    e "*yawn* Good morning..."
+    e nervous "(Big day today...)"
+    e "(Even Xavier got dressed up.)"
+    r "Let's go sign in."
+    hide eva
+    hide mason
+    hide xavier
+    hide ruby
+    #footsteps
+    "As we walked towards the registration desk, I noticed the group of students in line in front of us."
+    e neutral "Those uniforms..."
+    e "Isn't that...?"
+    show eva
+    x "It's Riverside..."
+    v "No way, that's Riverside Academy...!"
+    hide eva
+    "The students suddenly stopped talking to look at us."
+    define i = Character("Marie", image="marie")
+    Character("Blonde Riverside Girl") "?"
+    e nervous "Um, hi..."
+    e sigh "(Riverside Academy...where do I even begin?)"
+    "We may be one of the best public high schools in the county..."
+    "But Riverside Academy is the best school in the county, period."
+    e "(Making them our number one academic rival...)"
+    e nervous "(I've heard all kinds of things about students from Riverside...)"
+    show eva
+    v "We're from Southcrest!"
+    hide eva
+    Character("Blonde Riverside Girl") "Ah, I see."
+    Character("Blonde Riverside Girl") "We've heard about you."
+    Character("Blonde Riverside Girl") "Allow me to introduce myself. My name is Marie Fairfield, student body president of Riverside Academy."
+    show eva
+    v "Nice to meet you!"
+    v "I'm Eva, this is Xavier, and this is [name]."
+    hide eva
+    show ruby at middleleft    
+    show mason at short.middleright
+    "At that moment, Mason and Ruby returned from the registration desk."
+    m "What's going on?"
+    hide ruby
+    hide mason
+    show eva
+    v "This is Mason, and this is R--"
+    hide eva
+    show ruby
+    r "We've met."
+    r "You're Marie, right?"
+    hide ruby 
+    i "..."
+    show eva
+    v "Ruby..."
+    hide eva
+    show ruby
+    r "Good luck on your presentation."
+    r "...May the best one win."
+    hide ruby
+    "She quickly turned and walked away, expecting that we would follow."
+    "Reluctantly, we all did."
+    #footsteps
+    show mason
+    m "What happened?"
+    hide mason
+    show ruby
+    r "Let's focus on the task at hand."
+    "She handed everyone their nametags."
+    e nervous "(I forgot how scary she can be sometimes...)"
+    r "The registration said that we would present in around half an hour."
+    hide ruby
+    show mason
+    m "While we wait, do you want to practice some more?"
+    menu:
+        "Practice":
+            e neutral "Sure."
+            m "Okay..."
+            "Mason handed me the speaker notes."
+            m "Get ready, it's going to be more difficult..."
+            $debateindex = "debate2"
+            $speed = 0.65
+            jump debate
+
+        "Don't practice":
+            e neutral "I think I'm fine."
+            m "That's okay, then."
+            m "Just remember that the actual presentation is going to be a lot more difficult than what we practiced..."
+    
+    
+    label debate2:
+        hide mason
+        show ruby at left
+        show eva at middleleft    
+        show mason at short.middleright
+        show xavier at right
+        Character("Volunteer") "Southcrest High School?"
+        e "That's us."
+        Character("Volunteer") "Right this way, please..."
+    
+    scene bg backstage
+    "Before we knew it, we were backstage ready to present."
+    show ruby at left
+    show eva at middleleft    
+    show mason at short.middleright
+    show xavier at right
+    e sigh "(I'm so nervous...)"
+    m "Guys, everything is going to be fine..."
+    v "W-we've got this..."
+    Character("Jury Member") "Next up, Southcrest High School."
+    scene bg stage
+    #footsteps
+    hide ruby
+    hide eva
+    hide mason
+    hide xavier
+    show ruby at center
+    r "Ahem."
+    r "My name is Ruby Hartford, and I'm here today representing Southcrest High School."
+    r "We're here to present the topic of underutilization of public transportation among teens..."
+    hide ruby
+    "Before I knew it, it was my turn to speak."
+
+    $debateindex = "debate3"
+    $speed = 0.65
+    jump specialdebate 
+    label debate3:
+        $speaking_score = points
+    
+    Character("Jury Member") "Thank you, Southcrest High School."
+    Character("Jury Member") "We've also recieved the research and design documentation that you've sent in."
+    Character("Jury Member") "Expect to recieve your results by tomorrow afternoon."
+    Character("Jury Member") "You are free to go."
+
+    scene bg exterior
+    show eva
+    v "We did it!!!"
+    hide eva
+    show mason
+    m "We did really well, guys."
+    m "I'm so proud..."
+    hide mason
+    show xavier
+    x "I'm relieved it's over..."
+    x "I'm not a fan of public speaking."
+    e sigh "Same..."
+    show eva
+    v "Where's Ruby?"
+    hide eva
+    show mason
+    m "She said she had to leave early..."
+    m "Do you guys want to get lunch?"
+    hide mason
+    show eva
+    v "That sounds fun!"
+    hide eva
+    show xavier
+    x "Sure."
+    e neutral "I'd be down..."
+    hide xavier
+    show mason
+    m "Cool! It's a plan, then!"
+
+    scene bg exterior_sunset
+    "We ended up hanging out the whole day."
+
+    scene bg room_night
+    "As soon as I got home, I hit the hay."
+
+    scene black with fade
+
+#monday again?!
+    $ day = 8
+    "*BEEP BEEP*"
+    scene bg room
+
+    #blinking or something
+    show black with dissolve
+    pause 0.1
+    hide black with dissolve
+    pause 0.1
+    show black with dissolve
+    pause 0.1
+    hide black with dissolve
+
+    e sigh "It's Monday again..."
+
+    scene bg hallway
+    "After school, I made my way to the meeting room as usual."
+    e "(It's almost routine at this point...)"
+
+    scene bg meetingroom
+    show ruby at left
+    show eva at middleleft    
+    show mason at short.middleright
+    show xavier at right    
+    e "Hey..."
+    hide ruby
+    hide eva
+    hide mason
+    hide xavier
+
+    "I noticed that the principal was also there. Evidently, they had been waiting for me."
+    Character("Principal") "Have a seat."
+    Character("Principal") "I've recieved your scores from yesterday's presentation."
+    Character("Principal") "You all did well. I'm extremely proud."
+    Character("Principal") "I'll provide this week's task in just a moment."
+    Character("Principal") "However..."
+    Character("Principal") "There's some pressing news I'd like to discuss."
+    e "(Huh...?)"
+    Character("Principal") "The Ivy Gate Initiative Council has made some...changes regarding the distribution of prizes."
+    Character("Principal") "Because of resource scarcity, they are only able to reward a limited amount of scholarships and admission offers."
+    Character("Principal") "Which means..."
+    Character("Principal") "{b}Only a single person on each winning team will be offered a scholarship and admission to a top 10 university.{/b}"
+    Character("Principal") "The award recipients for each team will be determined by a combination of task performance and other factors not currently disclosed to participants."
+    Character("Principal") "The Council does not plan to make any further changes to tasks or initative rules at this time."
+    Character("Everyone") "..."
+    "There was a moment of silence."
+    show mason
+    m "There's no way..."
+    hide mason
+    show eva 
+    v "No way..."
+    hide eva
+    show xavier
+    x "This is crazy..."
+    hide xavier
+    show ruby
+    r "..."
+    hide ruby
+    e sigh "(...So, we've been competing against each other this entire time?!)"
+    Character("Principal") "That being said..."
+    Character("Principal") "I have your scores from yesterday right here."
+    Character("Principal") "I'll give you some time alone with each other to process everything, then come back with the second task."
+
+    "IVY GATE INITIATIVE TASK 01"
+    "Southcrest High School Score Breakdown"
+    "Hartford, Ruby. {p}Research: 50, Presentation: 50."
+    "[name]. {p}Research: 49, Presentation: 49."
+    "Espinoza, Mason. {p}Research: 48, Presentation: 50."
+    "Schafer, Eva. {p}Research: 47, Presentation: 49."
+    "Lim, Xavier. {p}Research: 48, Presentation: 46."
+    "Composite Score: 486"
+
+    e neutral "Ruby got a perfect score..."
+    e "I'm only two points behind her."
+    e "And I'm tied with Mason..."
+
+    "Still in shock, we looked around at each other."
+    e "(From now on, only one of us can win...)"
+    "Somehow, I knew that we would never look at each other in the same way ever again."
+
+    "[[End Chapter 0]"
+
+    return
+
+
+
+
+
 
 #to-dos:
 
@@ -1259,6 +1531,7 @@ label start:
 
 #thursday - write meeting thing
 
+#friday - everything
 
+#saturday - everything
 
-    return

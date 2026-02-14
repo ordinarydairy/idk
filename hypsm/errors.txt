@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/minigames.rpy", line 236: expected 'label_name' not found.
-    jump 
-        ^
+File "game/script.rpy", line 1312: expected 'label_name_declare' not found.
+    label debate1.5:
+         ^
 
 Ren'Py Version: Ren'Py 7.6.3.23091805
-Fri Feb 13 11:18:53 2026
+Fri Feb 13 20:53:51 2026
