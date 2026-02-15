@@ -1347,7 +1347,7 @@ label start:
     r "Good luck on your presentation."
     r "...May the best one win."
     hide ruby
-    "She quickly turned and walked away, expecting that we would follow."
+    "She quickly turned and walked away, expecting us to follow."
     "Reluctantly, we all did."
     #footsteps
     show mason

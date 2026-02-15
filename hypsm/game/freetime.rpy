@@ -71,10 +71,7 @@ label library:
         $randomize_cards()
         call screen memory_game
         label library3:
-            e "..."
             jump masonFT_1
-
-        jump WednesdayLunch
 #cafe - ruby bonus, jigsaw puzzle
 label cafe:
     $ freetimelocation = "cafe"
@@ -98,7 +95,10 @@ label cafe:
             $eva_stats.likes = "Volunteering"
             $eva_stats.relationship += 1
             show screen gameUI
-        jump TuesdayEve            
+        jump TuesdayEve  
+    elif day ==3:
+        m "I think that place's closed today..." 
+        jump library         
 
 #park - eva bonus
 label park:
@@ -110,6 +110,8 @@ label bookstore:
     if day == 3:
         e "How about the bookstore?"
         m "That sounds good!"
+        scene bg bookstore
+        jump masonFT_1
     else:
         jump library
 #convenience store - xavier bonus, 
@@ -158,6 +160,7 @@ label evaFT_1:
     jump expression "evaFT_1done_" + freetimelocation
 
 label masonFT_1:
+    show mason
     m "Sooo...."
     m "How are college apps going?"
     e nervous "(Talking about college right away, huh...)"
@@ -171,5 +174,18 @@ label masonFT_1:
     m "With everything I've done, I REALLY don't want to be stuck with some low-tier school."
     m "I guess I won't need to worry about that now that we've got this Ivy Gate thing, though..."
 
-    
+    menu: 
+        e neutral "I should use this time to get to know Mason better..."
+        "Ask about hobbies":
+            e "So, what do you like to do for fun?"
+            m "Well..."
+            m "Nowadays, I'm trying to talk to more people."
+            m "I need to build my network, you know?"
+            m "Currently I'm working on an AI B2B SaaS startup with some guys at Yale..."
+            m "You in, or...?"
+            e nervous "I think I'm good..."
+
+
+        #"Ask about school":
+            #e "What classes are you taking this year?"
     jump WednesdayLunch
