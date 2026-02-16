@@ -77,7 +77,7 @@ label library:
         jump TuesdayEve
     elif day == 3:
         e "Let's study in the library."
-        m "...Interesting choice, but I guess it's your call."
+        m annoyed "...Interesting choice, but I guess it's your call."
         scene bg library
         $ libraryday = "library3"
         $randomize_cards()
@@ -121,7 +121,7 @@ label park:
 label bookstore:
     if day == 3:
         e "How about the bookstore?"
-        m "That sounds good!"
+        m grin "That sounds good!"
         scene bg bookstore
         jump masonFT_1
     else:
@@ -173,27 +173,27 @@ label evaFT_1:
 
 label masonFT_1:
     show mason
-    m "Sooo...."
+    m neutral "Sooo...."
     m "How are college apps going?"
     e nervous "(Talking about college right away, huh...)"
     e "They're going okay?"
-    m "That's nice."
-    m "How many schools are you applying to? {p}19? 20?"
+    m grin "That's nice."
+    m surprised "How many schools are you applying to? {p}19? 20?"
     e nervous "Uhh....no?"
     e sigh "(That's so many...wouldn't that cost a fortune?)"
-    m "Well, to each their own, I suppose."
+    m nervous "Well, to each their own, I suppose."
     m "Personally, I want to keep it safe, you know?"
-    m "With everything I've done, I REALLY don't want to be stuck with some low-tier school."
-    m "I guess I won't need to worry about that now that we've got this Ivy Gate thing, though..."
+    m annoyed "With everything I've done, I REALLY don't want to be stuck with some low-tier school."
+    m nervous "I guess I won't need to worry about that now that we've got this Ivy Gate thing, though..."
 
     menu: 
         e neutral "I should use this time to get to know Mason better..."
         "Ask about hobbies":
             e "So, what do you like to do for fun?"
-            m "Well..."
+            m neutral "Well..."
             m "Nowadays, I'm trying to talk to more people."
             m "I need to build my network, you know?"
-            m "Currently I'm working on an AI B2B SaaS startup with some guys at Yale..."
+            m grin "Currently I'm working on an AI B2B SaaS startup with some guys at Yale..."
             m "You in, or...?"
             e nervous "I think I'm good..."
 

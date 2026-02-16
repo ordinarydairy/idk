@@ -145,7 +145,7 @@ label start:
     Character("Principal") "Every year, our school takes part in a special academic program. Only a few schools in the country are selected for it."
     Character("Principal") "It is called... {p}the{b} Ivy Gate Initiative. {/b}"
 
-    show mason at center
+    show mason surprised at center
     Character("Clean-cut Boy") "No way...that Ivy Gate thing is real?!"
     hide mason
     show eva at center
@@ -204,7 +204,7 @@ label start:
         show ruby at left
         show eva at middleleft
         
-        show mason at short.middleright
+        show mason neutral at short.middleright
         show xavier at right
         with dissolve
 
@@ -308,9 +308,9 @@ label start:
                     with move
 
                     m "Hey."
-                    m "My name is {b}Mason Espinosa{/b}. I don't believe we've met."
+                    m grin "My name is {b}Mason Espinosa{/b}. I don't believe we've met."
                     "He held out his hand for me to shake."
-                    m "And you are?"
+                    m neutral "And you are?"
                     e nervous "(This is a high school, not a job interview...)"
                     "I awkwardly shook his hand."
                     e neutral "I'm [name]."
@@ -326,21 +326,21 @@ label start:
                     show mason
                     m "So, [name]..."
                     menu masontalk:
-                        m "What's your take on this whole 'Ivy Gate' thing?"
+                        m neutral "What's your take on this whole 'Ivy Gate' thing?"
                         "It's exciting":
-                            m "I totally agree."
+                            m grin "I totally agree."
                         "It's strange":
-                            m "Really? I never thought of it that way."
+                            m surprised "Really? I never thought of it that way."
                             e nervous "Doesn't it sound too good to be true?"
-                            m "Well, kind of..."
-                            m "But if you really think about it, it makes sense."
+                            m nervous "Well, kind of..."
+                            m grin "But if you really think about it, it makes sense."
 
                     m "This definitely sounds like the kind of thing that T10 schools would do, you know?"
                     m "I've been hearing about this thing from past seniors for years."
-                    m "Besides, we're the top five students at this school for a reason, right?"
+                    m neutral "Besides, we're the top five students at this school for a reason, right?"
                     
                     e nervous "I guess so..."
-                    m "This project is going to be a blast."
+                    m grin "This project is going to be a blast."
                     m "We're totally going to win. Trust me."
 
                     #increase mason relationship
@@ -465,7 +465,7 @@ label start:
     r "If all of us put in a sufficient amount of effort, I don't see any problem with us being able to finish before the deadline."
     hide ruby
     show mason at center
-    m "I dunno, it seems like an awful lot of work to me..."
+    m nervous "I dunno, it seems like an awful lot of work to me..."
     hide mason
     show xavier at center
     x "....."
@@ -488,13 +488,13 @@ label start:
     r "We should come up with an issue together that we all feel relatively passionate about."
     hide ruby
     show mason at center
-    m "Wait a minute, who died and made you king?!"
+    m annoyed "Wait a minute, who died and made you king?!"
     hide mason
     show ruby at middleleft    
     show mason at short.middleright
     r "Considering you were the last to arrive this afternoon, you're in no position to petition for leader."
-    m "Alright, fine..."
-    m "But don't try to commandeer this project like one of your student council initiatives, got it?"
+    m nervous "Alright, fine..."
+    m annoyed "But don't try to commandeer this project like one of your student council initiatives, got it?"
     hide ruby
     hide mason
     
@@ -550,7 +550,7 @@ label start:
     r "I'd settle for it."
     hide ruby
     show mason at center
-    m "Same here."
+    m neutral "Same here."
     hide mason
 
     show eva
@@ -566,7 +566,7 @@ label start:
     hide ruby
     show ruby at middleleft    
     show mason at short.middleright
-    m "So, we should make two teams work simultaneously that each focus on either research or design."
+    m grin "So, we should make two teams work simultaneously that each focus on either research or design."
     r "...Yes, I was just going to say that."
     m "Hey, just trying to show that I'm listening."
     hide mason
@@ -908,12 +908,12 @@ label start:
     show mason
     m "Hey [name], how's it going?"
     e nervous "I'm doing okay..."
-    m "Good, good!"
+    m grin "Good, good!"
     
     # talk to mason (project related) at lunch
     m "You guys are completely finished with your portion of the project, huh?"
-    m "Must be nice..."
-    m "Although I can't really complain, since Ruby keeps insisting on doing a majority of the work by herself..."
+    m nervous "Must be nice..."
+    m neutral "Although I can't really complain, since Ruby keeps insisting on doing a majority of the work by herself..."
     m "Anyways, I'll catch you up to speed on what we've done so far, since you're interested."
     "He begins to recall the past few meetings in intense detail."
     e nervous "(This guy can really talk.)"
@@ -924,13 +924,13 @@ label start:
     
     # hang out with mason (free time)
     m "There's still a couple of minutes left of lunch."
-    m "Want to go somewhere?"
+    m grin "Want to go somewhere?"
     $ freeTimewith = "Mason"
     call screen freeTime
 
     label WednesdayLunch:
-        m "I think we should head back to class soon."
-        m "It was nice talking to you, though!"
+        m neutral "I think we should head back to class soon."
+        m grin "It was nice talking to you, though!"
 
         hide mason
         $mason_stats.likes = "Browsing LinkedIn"
@@ -988,7 +988,7 @@ label start:
     hide eva
     show mason
     m "I've gotten to network with so many people this week."
-    m "Including you guys, obviously."
+    m grin "Including you guys, obviously."
     m "It's pretty exciting, actually."
     e nervous "Interesting..."
     hide mason
@@ -1026,7 +1026,7 @@ label start:
     r "Mason, would you like to share our plans for the pitch?"
     hide ruby 
     show mason
-    m "Okay."
+    m neutral "Okay."
     m "To start, we want to work with the city to create a free or reduced travel pass for all students."
     m "We would also try and improve service frequency through the city, though we think it's not really achieveable."
     m "The heart of our pitch is going to be a specialized app designed to help teens travel conveniently and safely."
@@ -1040,15 +1040,15 @@ label start:
     "We concluded the meeting."
     "The others quickly packed up and left until Mason and I were the only ones remaining."
     show mason
-    m "You know..."
+    m nervous "You know..."
     m "He may seem kind of like a bum, but Xavier's actually really smart."
     e nervous "I know..."
     e sigh "(I've heard so much about him, but it's kind of hard to believe that the kid so many people call a genius is...)"
     e "(Is...)"
-    m "I don't think he's had many opportunities to apply himself due to the nature of this first task..."
-    m "Just trust me, he's really smart."
+    m neutral "I don't think he's had many opportunities to apply himself due to the nature of this first task..."
+    m nervous "Just trust me, he's really smart."
     e nervous "He seems like he's under a lot of stress right now..."
-    m "In the long run, I don't think we can win without him."
+    m grin "In the long run, I don't think we can win without him."
     m "Well, see ya."
  
 
@@ -1228,7 +1228,7 @@ label start:
 
 # afternoon meeting, plan presentation/saturday/divvy up presenter roles
     scene bg meetingroom
-    "I was the last person to arrive that day."
+    "I was the last person to arrive."
     show ruby
     r "Since we're all here, let's get started."
     r "I've finished the design write-up that we'll send to the initiative council."
@@ -1239,8 +1239,16 @@ label start:
     e "Yeah."
     hide eva
     show ruby
+    r "Let's move on to the presentation."
+    r "I'd like it if everyone here presented an equal portion of the presentation."
+    r "I can do the introduction, but it makes sense for people to present the parts they worked on."
+    hide ruby
+    show mason
+    m "That sounds good."
+    m "Should we use this time to put together slides and rehearse a little?"
+    e "Sure..."
 
-    scene bg room
+    scene bg room_night
     $ phone.system.date = datetime.datetime(year=2025, day=19, month=8, hour=5, minute=51)
     phone discussion "GC":
         time year 2025 day 19 month 8 hour 5 minute 51
@@ -1262,8 +1270,31 @@ label start:
     m "My parents are out of town, by the way."
     m "Feel free to help yourself to anything we have here."
     e "(I never thought that Mason's house would look like this...)"
+    hide mason
+    show ruby at left
+    show eva at middleleft    
+    show mason at short.middleright
+    show xavier at right
     "Soon enough, everyone had arrived."
-    "get ready."
+    hide mason
+    hide ruby
+    hide eva
+    hide xavier
+    show xavier at center
+    m "I do a lot of public speaking, and I was thinking we should just practice presenting in front of each other a bunch today."
+    m "Ruby, would you like to go first?"
+    hide xavier
+    show ruby at center
+    r "Sure."
+    hide ruby
+    "The others took turns speaking one after the other, until it was my turn to go."
+    e nervous "(I can't say I've had much experience with public speaking...)"
+    e "(Mason and Ruby are both in clubs that focus on presenting.)"
+    e "(I guess I should just go for it?)"
+    show mason
+    m "Are you ready?"
+    e "Yeah, just give me a second."
+    e "(Here I go...)"
     $debateindex = "debate1"
     $speed=0.8
     jump debate
@@ -1271,10 +1302,12 @@ label start:
         if score <= 20:
             r "Fortunately, that was just practice."
             r "I strongly encourage you to rehearse on your own time before tomorrow's presentation"
+            e "That wasn't so bad..."
+            e "If I practice more, I'll be halfway decent."
         else:
             r "Well done."
-            v "That was great, [name]!"
-            r "Just remember that the actual presentation will be a lot more difficult than this."
+            v "That was great, [name]! You're a natural!"
+            r "Just remember that the actual presentation will be much more difficult than what we practiced."
     r "I think that's enough practice for now."
 
 
@@ -1282,7 +1315,7 @@ label start:
 #sunday
 #they drive to the event
     "The next morning, we each drove to the presentation venue."
-    e nervous "(Thankfully, it wasn't that long of a drive...)"
+    e nervous formal "(Thankfully, it wasn't that long of a drive...)"
 # they meet the opps who seem like theyll be important but actually arent rlly that important
     scene bg auditorium
     #chatter
@@ -1291,8 +1324,8 @@ label start:
     show mason at short.middleright
     show xavier at right
     v "Good morning, everyone!!!"
-    e "*yawn* Good morning..."
-    e nervous "(Big day today...)"
+    e neutral formal "*yawn* Good morning..."
+    e nervous formal"(Big day today...)"
     e "(Even Xavier got dressed up.)"
     r "Let's go sign in."
     hide eva
@@ -1301,7 +1334,7 @@ label start:
     hide ruby
     #footsteps
     "As we walked towards the registration desk, I noticed the group of students in line in front of us."
-    e neutral "Those uniforms..."
+    e neutral formal "Those uniforms..."
     e "Isn't that...?"
     show eva
     x "It's Riverside..."
@@ -1310,12 +1343,12 @@ label start:
     "The students suddenly stopped talking to look at us."
     define i = Character("Marie", image="marie")
     Character("Blonde Riverside Girl") "?"
-    e nervous "Um, hi..."
-    e sigh "(Riverside Academy...where do I even begin?)"
+    e nervous formal "Um, hi..."
+    e sigh formal "(Riverside Academy...where do I even begin?)"
     "We may be one of the best {i}public{/i} high schools in the county..."
     "But Riverside Academy is the best school in the county, period."
     e "(Making them our number one academic rival...)"
-    e nervous "(I've heard all kinds of things about students from Riverside...)"
+    e nervous formal "(I've heard all kinds of things about students from Riverside...)"
     show eva
     v "We're from Southcrest!"
     hide eva
@@ -1356,14 +1389,14 @@ label start:
     show ruby
     r "Let's focus on the task at hand."
     "She handed everyone their nametags."
-    e nervous "(I forgot how scary she can be sometimes...)"
+    e nervous formal "(I forgot how scary she can be sometimes...)"
     r "The registration said that we're presenting in around half an hour."
     hide ruby
     show mason
     m "While we wait, do you want to practice some more?"
     menu:
         "Practice":
-            e neutral "Sure."
+            e neutral formal "Sure."
             m "Okay..."
             "Mason handed me the speaker notes."
             m "Get ready, it's going to be more difficult..."
@@ -1372,7 +1405,7 @@ label start:
             jump debate
 
         "Don't practice":
-            e neutral "I think I'm fine."
+            e neutral formal "I think I'm fine."
             m "That's okay, then."
             m "Just remember that the actual presentation is going to be a lot more difficult than what we practiced..."
     
@@ -1393,7 +1426,7 @@ label start:
     show eva at middleleft    
     show mason at short.middleright
     show xavier at right
-    e sigh "(I'm so nervous...)"
+    e sigh formal "(I'm so nervous...)"
     m "Guys, everything is going to be fine..."
     v "W-we've got this..."
     Character("Jury Member") "Next up, Southcrest High School."
@@ -1432,7 +1465,7 @@ label start:
     show xavier
     x "I'm relieved it's over..."
     x "I'm not a fan of public speaking."
-    e sigh "Same..."
+    e sigh formal "Same..."
     hide xavier
     show eva
     v "Where's Ruby?"
@@ -1446,7 +1479,7 @@ label start:
     hide eva
     show xavier
     x "Sure."
-    e neutral "I'd be down..."
+    e neutral formal "I'd be down..."
     hide xavier
     show mason
     m "Cool! It's a plan, then!"
@@ -1549,7 +1582,6 @@ label start:
 #to-dos:
 
 #graphics (me) - refine character sprites + poses/expressions
-#                !!!!!!!map!!!!!!!!!!
 
 #eden
     # happy 
