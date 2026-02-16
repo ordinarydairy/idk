@@ -9,9 +9,9 @@ renpy.geometry renpy.texture
 renpy.solid
 renpy.ftl
 renpy.alpha renpy.texture renpy.texture
-renpy.dissolve renpy.dissolve
 renpy.matrixcolor renpy.texture
 renpy.texture -renpy.texture renpy.blur renpy.texture -renpy.texture renpy.blur
+renpy.alpha renpy.solid
 renpy.geometry renpy.matrixcolor renpy.solid
 renpy.blur renpy.geometry
 renpy.geometry renpy.texture shader.rounded_corners
@@ -19,7 +19,7 @@ renpy.blur renpy.geometry renpy.matrixcolor
 shader.rounded_corners renpy.texture renpy.texture
 renpy.texture
 renpy.geometry renpy.matrixcolor renpy.texture
-renpy.alpha renpy.solid
+renpy.dissolve renpy.dissolve
 renpy.dissolve renpy.geometry
 renpy.texture renpy.texture
 renpy.matrixcolor renpy.alpha renpy.solid

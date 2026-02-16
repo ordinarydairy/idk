@@ -61,9 +61,9 @@ label library:
         call screen memory_game
         label library2:
             show eva
-            v "Flashcards are really helpful for studying, aren't they?"
-            v "I like how they make it easy to quiz yourself on the material."
-            v "Do you use them often?"
+            v smile "Flashcards are really helpful for studying, aren't they?"
+            v neutral "I like how they make it easy to quiz yourself on the material."
+            v question "Do you use them often?"
             e nervous "Sometimes..."
             e "(I usually just make them when I'm cramming for a test...)"
             
@@ -91,7 +91,7 @@ label cafe:
         e "Let's go to the cafe."
         scene bg cafe
         e "The cafe always has jigsaw puzzles laying around..."
-        v "Let's work on one together!"
+        v smile "Let's work on one together!"
         #call jigsaw puzzle game once i figure that out
         $ cafeday = "cafe2"
         $setup_puzzle()
@@ -132,42 +132,44 @@ label convenience:
     jump library
 
 label evaFT_1:
-    v "I guess I never really asked you about this, but what do you think about this Ivy Gate project?"
-    v "I mean, my classes aren't really hardcore, so it's kind of hard for me to wrap my head around how this single project could change all of our lives, you know?"
+    v question "I guess I never really asked you about this, but what do you think about this Ivy Gate project?"
+    v nervous "I mean, my classes aren't really hardcore, so it's kind of hard for me to wrap my head around how this single project could change all of our lives, you know?"
+    show eva neutral 
     e nervous "(Life-changing, huh...)"
     e "(That's kind of an exaggeration, but this project is pretty important...)"
     e "I guess I'm just not sure how to feel about it yet."
-    v "We should just do the best we can, and work together, right?"
+    v question "We should just do the best we can, and work together, right?"
     e neutral "Right. We all have strengths in different areas, I'm sure."
-    v "It's a team effort. Imagine if we had to compete against each other! That'd be silly."
+    v nervous "It's a team effort. Imagine if we had to compete against each other! That'd be silly."
     e sigh "(Sounds like a nightmare...)"
+    show eva neutral 
     "The air between us falls silent."
     menu: 
-        e neutral "I should use this time to get to know Eva better..."
+        e neutral "(I should use this time to get to know Eva better...)"
         "Ask about hobbies":
             e "So, what do you like to do for fun?"
-            v "Hmm..."
-            v "Well, it's a three-way tie."
+            v nervous "Hmm..."
+            v neutral "Well, it's a three-way tie."
             v "Between running TutorToday, working at the community garden, and playing piano, I'd say they're all my favorite."
-            v "I guess I won't have much time to work on anything else now that we've got Ivy Gate, though..."
+            v nervous "I guess I won't have much time to work on anything else now that we've got Ivy Gate, though..."
 
 
         "Ask about school":
             e "What classes are you taking this year?"
-            v "English, math, government..."
-            v "Nothing crazy, I guess."
-            v "I wanna take it easy for now because it's senior year, you know?"
-            v "I also wanted to spend more time volunteering this year."
+            v question "English, math, government..."
+            v neutral "Nothing crazy, I guess."
+            v nervous "I wanna take it easy for now because it's senior year, you know?"
+            v smile "I also wanted to spend more time volunteering this year."
 
     e "How long have you been volunteering?"
-    v "Since eighth grade..."
-    v "I know a lot of people start doing it because they think it'll look good on college applications, but that's not the case with me at all...!!"
-    v "It kind of just started with me playing piano around town, and it's branched off into all kinds of things since."
+    v neutral "Since eighth grade..."
+    v nervous "I know a lot of people start doing it because they think it'll look good on college applications, but that's not the case with me at all...!!"
+    v neutral "It kind of just started with me playing piano around town, and it's branched off into all kinds of things since."
     e "How long have you been playing piano?"
     v "I started in third grade, but it's been on and off."
-    v "Lately I haven't been feeling the same passion for it that I used to..."
+    v nervous "Lately I haven't been feeling the same passion for it that I used to..."
     v "It's kind of scary when that happens, you know?"
-    v "Or maybe that's just me, haha..."
+    v smile "Or maybe that's just me, haha..."
 
     jump expression "evaFT_1done_" + freetimelocation
 
@@ -187,7 +189,7 @@ label masonFT_1:
     m nervous "I guess I won't need to worry about that now that we've got this Ivy Gate thing, though..."
 
     menu: 
-        e neutral "I should use this time to get to know Mason better..."
+        e neutral "(I should use this time to get to know Mason better...)"
         "Ask about hobbies":
             e "So, what do you like to do for fun?"
             m neutral "Well..."
