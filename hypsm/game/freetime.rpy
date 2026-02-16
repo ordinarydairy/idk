@@ -1,40 +1,52 @@
 screen freeTime:
-    add "map.jpg"
-
-    imagebutton:
-        xpos 50
-        ypos 300
-        idle "building1.png"
-        hover "building2.png"
-        action Jump("library")
+    add "map.png"
 
     imagebutton:
         xpos 300
-        ypos 300
-        idle "building1.png"
-        hover "building2.png"
+        ypos 100
+        idle "library.png"
+        hover "library copy.png"
+        action Jump("library")
+
+    imagebutton:
+        xpos 400
+        ypos 700
+        idle "cafe.png"
+        hover "cafe copy.png"
         action Jump("cafe")
 
     imagebutton:
-        xpos 600
-        ypos 300
-        idle "building1.png"
-        hover "building2.png"
+        xpos 850
+        ypos 350
+        idle "park.png"
+        hover "park copy.png"
         action Jump("park")
 
     imagebutton:
-        xpos 1100
-        ypos 300
-        idle "building1.png"
-        hover "building2.png"
+        xpos 1200
+        ypos 90
+        idle "bookstore.png"
+        hover "bookstore copy.png"
         action Jump("bookstore")
 
     imagebutton:
         xpos 1500
-        ypos 300
-        idle "building1.png"
-        hover "building2.png"
+        ypos 550
+        idle "convenience.png"
+        hover "convenience copy.png"
         action Jump("convenience")
+
+    imagebutton:
+        xpos 50
+        ypos 400
+        idle "school.png"
+        hover "school copy.png"
+        
+    imagebutton:
+        xpos 1000
+        ypos 750
+        idle "home.png"
+        hover "home copy.png"
 
 #library - no bonuses, sat word game (concentration)
 label library:

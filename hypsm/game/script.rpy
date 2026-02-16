@@ -878,7 +878,7 @@ label start:
     m "Want to grab coffee or something together at lunch tomorrow?"
     e nervous "Sure, why not..."
     m "Cool."
-    m "See ya!"
+    m "See ya then!"
     phone end call 
 
     "Soon after talking to Mason, I fell asleep."
@@ -1549,7 +1549,7 @@ label start:
 #to-dos:
 
 #graphics (me) - refine character sprites + poses/expressions
-#                map!!!!!!!!!!
+#                !!!!!!!map!!!!!!!!!!
 
 #eden
     # happy 
@@ -1566,8 +1566,8 @@ label start:
     #scared
 
 #mason
-    #normal
-    #shocked
+    ##normal
+    ##shocked
     #nervous
     #skeptical/annoyed
     #happy

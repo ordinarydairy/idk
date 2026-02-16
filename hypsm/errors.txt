@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1312: expected 'label_name_declare' not found.
-    label debate1.5:
-         ^
+File "game/freetime.rpy", line 8: The on statement is not a valid child of the imagebutton statement.
+    on hover:
+      ^
 
 Ren'Py Version: Ren'Py 7.6.3.23091805
-Fri Feb 13 20:53:51 2026
+Sun Feb 15 16:53:06 2026
