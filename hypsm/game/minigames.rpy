@@ -208,7 +208,7 @@ screen qte_simple:
             xalign 0.5
             color "#fff"
             size 36
-            #outlines [ (2,"#000000",0,0) ]
+            outlines [ (2,"#000000",0,0) ]
             # text showing the key to press
 
         bar:

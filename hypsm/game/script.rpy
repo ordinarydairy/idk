@@ -1068,11 +1068,11 @@ label start:
     Character("Sister") "Can you run to the store and buy more?"
     e sigh "Or not..."
 
-    scene bg store
+    scene bg street1_night
     e "(There's only one place in town that's open right now.)"
     e "(Good thing I live close...)"
 
-    #footsteps
+    scene bg store
     "As expected, the convenience store was basically empty."
     e "(I feel bad for the employees...)"
     e "(Hopefully they have dish soap here...)"
@@ -1288,10 +1288,10 @@ label start:
     hide ruby
     hide eva
     hide xavier
-    show xavier at center
+    show mason at center
     m "I do a lot of public speaking, and I was thinking we should just practice presenting in front of each other a bunch today."
     m "Ruby, would you like to go first?"
-    hide xavier
+    hide mason
     show ruby at center
     r sigh "Sure."
     hide ruby
@@ -1329,10 +1329,10 @@ label start:
 
 #sunday
 #they drive to the event
+    scene bg exterior
     "The next morning, we each drove to the presentation venue."
     e nervous formal "(Thankfully, it wasn't that long of a drive...)"
 # they meet the opps who seem like theyll be important but actually arent rlly that important
-    scene bg auditorium
     #chatter
     show ruby at left
     show eva at middleleft    
@@ -1351,8 +1351,10 @@ label start:
     "As we walked towards the registration desk, I noticed the group of students in line in front of us."
     e neutral formal "Those uniforms..."
     e "Isn't that...?"
-    show eva
+    show xavier
     x "It's Riverside..."
+    hide xavier
+    show eva
     v worried "No way, that's Riverside Academy...!"
     hide eva
     "The students suddenly stopped talking to look at us."
@@ -1393,7 +1395,7 @@ label start:
     hide eva
     show ruby
     r "Good luck on your presentation."
-    r sigh "...May the best one win."
+    r sigh "...May the best school win."
     hide ruby
     "She quickly turned and walked away, expecting us to follow."
     "Reluctantly, we all did."
@@ -1436,8 +1438,8 @@ label start:
         e "That's us."
         Character("Volunteer") "Right this way, please..."
     
-    scene bg backstage
-    "Before we knew it, we were backstage ready to present."
+    scene bg auditorium
+    "Before we knew it, we were inside ready to present."
     show ruby at left
     show eva at middleleft    
     show mason at short.middleright
@@ -1446,7 +1448,7 @@ label start:
     m nervous "Guys, everything is going to be fine..."
     v nervous "W-we've got this..."
     Character("Volunteer") "Next up, Southcrest High School."
-    scene bg stage
+    scene bg auditorium
     #footsteps
     hide ruby
     hide eva
