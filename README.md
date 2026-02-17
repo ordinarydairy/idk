@@ -1,7 +1,20 @@
-# the ivy gate initative — Ren'Py project
+# the ivy gate initative (aka hypsm) — Ren'Py project
 
-Small Ren'Py visual-novel project containing a phone UI and several minigames.
+Small Ren'Py visual novel project.
+
 Web demo: https://ordinarydairy.itch.io/the-ivy-gate-initiative
+
+## Mac
+- Download Mac release from [releases](https://github.com/ordinarydairy/idk/releases)
+- Unzip files, open the application
+- If prompted, allow access to files or drag the application to the Applications folder
+
+## PC
+- Download PC release from [releases](https://github.com/ordinarydairy/idk/releases)
+- Unzip files, open the application
+- I don't have a PC but hopefully it's self explanatory enough...
+  
+# Development
 
 ## Requirements
 - Ren'Py (recommended latest stable release)
