@@ -1,6 +1,7 @@
-# hypsm — Ren'Py project
+# the ivy gate initative — Ren'Py project
 
 Small Ren'Py visual-novel project containing a phone UI and several minigames.
+Web demo: https://ordinarydairy.itch.io/the-ivy-gate-initiative
 
 ## Requirements
 - Ren'Py (recommended latest stable release)
